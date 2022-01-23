@@ -8,4 +8,6 @@ class AppColor {
   static const whiteTextColor = Color(0xFFFFFFFF);
   static const whiteAlmostTextColor = Color(0xFFC0C1CF);
   static const grayTextColor = Color(0xFFA1A2B7);
+  static const blackTextColor = Color(0xFF000000);
+  static const textFieldBgColor = Color(0xFFF8F8FA);
 }
