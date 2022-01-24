@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/screens/register_screen.dart';
 import '../utils/colors.dart' as color;
 import '../widgets/widget.dart';
 
@@ -141,6 +142,9 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _openSignUpScreen() {
-    print("::::::::::: OPEN SIGN UP :::::::");
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SignUp()),
+    );
   }
 }
