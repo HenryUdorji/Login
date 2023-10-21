@@ -1,0 +1,77 @@
+// #### Version 2.0 (<BundleVersion>.<fileVersion>)
+// NOTE:
+// terminalTags format is "name:value". name must NOT be modified. value must in hex conforming to the length of existing value
+{
+    "READER_PROFILES": [
+        {
+            "name": "MPOS",
+            "type": "Multi",
+            "initReaderData": "initNoData",
+            "contactlessMCProfile": "PPS_MChip1",
+            "terminalTags": [
+                "Additional Terminal Capabilities:7000802000",
+                "Interface Device Serial Number:3031303031313031",
+                "Merchant Category Code:5300",
+                // Merchant Name : Location
+                "Merchant Name and Location:4c4f5455532042414e4b204e49472020202020202020204c4120202020202020202020204c414e47",
+                // ISO 3116 Country Code for Nigeria
+                "Terminal Country Code:0566",
+                "Terminal Identification:323330333036344c",
+                // Retail Sale
+                "Transaction Category Code:52",
+                // Online only merchant attended
+                "Terminal Type:21",
+                "Transaction Type:TRANSACTION_TYPE_PURCHASE",
+                "Transaction Currency Code:0566",
+                "Point-of-Service (POS) Entry Mode:00"
+            ]
+        },
+        {
+            "name": "PPS_MChip1",
+            "show": "V3Test",
+            "type": "Single",
+            "initReaderData": "initMposTerm",
+            "transactionData": [
+                {
+                    "transactionType": [
+                        "TRANSACTION_TYPE_PURCHASE",
+                        "TRANSACTION_TYPE_PURCHASE_WITH_CASHBACK",
+                        "TRANSACTION_TYPE_REFUND"
+                    ],
+                    "supportedCombinations": [
+                        {
+                            "aid": "A0000000041010",
+                            "minlen": 7,
+                            "product": "MasterCard credit or debit",
+                            "asi": true,
+                            "kernelID": "02",
+                            "data": [
+                                "ContactlessMposPilot",
+                                "KernelConfig:20",
+                                "ReaderCVMRequiredLimit:000000000000",
+                                "ReaderCTLOndevice:000001500000",
+                                "ReaderCTLNoOndevice:000001500000",
+                                "TerminalFloorLimit:00000000"
+                            ]
+                        },
+                        {
+                            "aid": "A0000000043060",
+                            "minlen": 7,
+                            "product": "Maestro",
+                            "asi": true,
+                            "kernelID": "02",
+                            "data": [
+                                "ContactlessMposPilot",
+                                "KernelConfig:A0",
+                                "ReaderCVMRequiredLimit:000000000000",
+                                "ReaderCTLOndevice:000001500000",
+                                "ReaderCTLNoOndevice:000001500000",
+                                "TerminalFloorLimit:00000000"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
